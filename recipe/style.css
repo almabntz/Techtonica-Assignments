@@ -1,0 +1,57 @@
+$desktop:1200px;
+$laptop:992px;
+$tablet:768px;
+$phone:480px;
+
+.top {
+@media screen and(max-width:$desktop) and (min-width:$phone)
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 75%;
+  @media screen and(max-width:$desktop) and (min-width:$phone)
+}
+
+.recipe{
+  background-color: rgb(106, 148, 77);
+  box-sizing: content-box;
+  padding: 15px;
+  text-align: center;
+  width: 100%;}
+  @media screen and (max-width: 900px) {
+
+  }   
+footer{
+      text-align:left
+      @media screen and(max-width:$desktop) and (min-width:$phone)
+    }
+    
+.title{
+  text-align: center;
+}
+
+body {
+  background-color: pink;}
+
+  @media screen and (max-width: 900px) {
+    body {
+      background-color: rgb(106, 148, 77);
+    }
+  }
+
+  .button {
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
+  
