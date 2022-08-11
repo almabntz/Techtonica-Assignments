@@ -1,0 +1,31 @@
+body{
+    background-color: rgba(223,222,220,255)
+}
+
+.myPortrait {
+    float: left;
+    width: 400px;
+  }
+  .bodyDescriptionText {
+    float:right;
+  }
+
+.title{
+    text-align:left;
+}
+
+div.container {
+    text-align: left;
+  }
+  ul.skills UL {
+    display: inline-block;
+    text-align: center;
+  }
+
+
+  ul.experience UL {
+    display: inline-block;
+    text-align: center;
+  }
+
+ 
