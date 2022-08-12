@@ -35,11 +35,12 @@ div.container {
   }
 
   .footer{
-    position:fixed;
+    position:sticky;
     bottom:0;
    left:0;
   }
   
+
   @media only screen and (min-width: 601px) {
    body {
       position:relative;
