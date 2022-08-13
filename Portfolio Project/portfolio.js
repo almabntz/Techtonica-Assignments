@@ -7,3 +7,4 @@ const email= data.get("user_mail") //retrieves email input that was entered into
 console.log(email)
 }
 form.addEventListener("submit",onSubmit)//event listener for form
+document.body.appendChild(form);
