@@ -1,0 +1,24 @@
+
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="GuessNum.css"> 
+    </head>
+    <body>
+        <h1>Guess the Number!</h1>
+        <div class="container">
+                <form id="FormGuessNum">
+                    <p>Its a super secret number, but please try anyway!</p>
+                    <p><b> Range is between: 1 and 10</b></p>
+                    <input type="text" id="guess" maxlength="2" 
+                    autocomplete="off" placeholder="Enter your Guess" required>
+                    <input type="submit" class="guessSubmit" value="Lets go!"
+                     id = "submitguess">
+                </form>
+        </div>
+        <div class="container">
+                <p>Your guesses so far...</p>
+                <p id="wrongGuesses"></p>
+        </div>    
+        <script src="GuessNum.js"></script>
+    </body>
+</html>
