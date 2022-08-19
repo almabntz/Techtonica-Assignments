@@ -8,7 +8,7 @@ console.log(y)
 let timesGuessed = 0;
 
 //array that collects all incorrect guesses
-const arr1= [];
+const arr1 = [];
 
 //event listener 
 document.getElementById("FormGuessNum").addEventListener("submit", function (event) {
@@ -21,13 +21,13 @@ document.getElementById("FormGuessNum").addEventListener("submit", function (eve
     //pushes all guesses into an array
     arr1.push(x);
 
-    document.getElementById("wrongGuesses").innerHTML= arr1
-    
-  
+    document.getElementById("wrongGuesses").innerHTML = arr1
+
+
     //compares users guess to random number generated
     if (x === y) {
 
-        // //feedback alerts
+        //feedback alerts
 
         alert("Correct, it was " + y + "! You are very good at guessing! "
             + timesGuessed + " GUESS ");
