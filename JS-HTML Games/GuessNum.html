@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+    <head>
+        <link rel="stylesheet" href="GuessNum.css"> 
+    </head>
+    <body>
+        
+       <div class="wrap">
+            <video autoplay muted loop id="myVideo">
+                <source src="myVideo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+             
+    <div class="container0">
+        <h1>Guess the Number!</h1>
+            <p>Ive selected a number between 1 and 10. I want you to guess what it is!
+                You get as many guesses as you need, but I will be keeping count of 
+                how many guesses it takes! 
+            </p>
+           
+        <div class="container1">
+                <form id="FormGuessNum">
+                    <p>Its a super secret number, but please try anyway!</p>
+                    <p><b> Range is between: 1 and 10</b></p>
+                    <input type="text" id="guess" maxlength="2" 
+                    autocomplete="off" placeholder="Enter your Guess" required>
+                    <input type="submit" class="guessSubmit" value="Lets go!"
+                     id = "submitguess">
+                </form>
+        </div>
+        <div class="container2">
+                <p>Your guesses so far...</p>
+                <p id="wrongGuesses"></p>
+        </div>    
+    </div>
+</div>
+        <script src="GuessNum.js"></script>
+    </body>
+</html>

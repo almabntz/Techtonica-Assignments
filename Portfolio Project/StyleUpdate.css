@@ -1,0 +1,48 @@
+body{
+  background-color: rgba(223,222,220,255)
+}
+
+.myPortrait {
+    float: left;
+    width: 400px;
+    padding: 25px;
+  }
+
+.bodyDescriptionText {
+    float:right;
+    width: 800px;
+    padding: 25px;
+    background-color:rgba(127,147,146,255);
+  }
+
+.title{
+    text-align:left;
+}
+
+div.container {
+    text-align: left;
+    
+  }
+  ul.skills UL {
+    display: inline-block;
+    text-align: center;
+  }
+
+
+  ul.experience UL {
+    display: inline-block;
+    text-align: center;
+  }
+
+  .footer{
+    position:sticky;
+    bottom:0;
+   left:0;
+  }
+  
+
+  @media only screen and (min-width: 601px) {
+   body {
+      position:relative;
+    }
+  }
