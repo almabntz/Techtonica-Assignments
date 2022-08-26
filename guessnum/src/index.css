@@ -22,12 +22,12 @@ code {
 .gametext {
   display:inline-block;
   top: 330px;
-  left: 592px;
+  left: 550px;
   position:fixed;
   margin: auto;;
   border-radius: 8px;
   max-width: 1000px;
   box-shadow: 2px 2px 4px rgb(0, 0, 0);
-  padding: 109px;
+  padding: 115px;
   background-color: rgb(77, 164, 79);
 }

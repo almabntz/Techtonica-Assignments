@@ -11,7 +11,7 @@ const Game = () => {
   };
   // get secret generates the random num. set secret IS ASSIGNED that num
   const getSecret = () => {
-    setSecret(Math.floor(Math.random() * 20) + 1);
+    setSecret(Math.floor(Math.random() * 10) + 1);
   };
 
   // getSecret() will populate a number very time it is clicked!
@@ -19,7 +19,7 @@ const Game = () => {
   return (
     <div>
       <div>
-        <label htmlFor="term">Guess Number between 1 to 20</label>
+        <label htmlFor="term">Guess Number between 1 to 10</label>
       </div>
       <input
         id="term"
