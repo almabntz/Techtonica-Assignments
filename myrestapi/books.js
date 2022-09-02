@@ -1,43 +1,43 @@
-const BOOKS = [{
-    "isbn": "0553120441",
-    "title": "Harry Potter and the Sorcerer's Stone",
-    "author": "J.K. Rowling",
+let BOOKS = [{
+    "isbn": "9781534406254",
+    "title": "City of Bones",
+    "author": "Cassandra Clare",
     "format": "Paperback"
 },
 {
-    "isbn": "0679889175",
-    "title": "Harry Potter and the Chamber of Secrets",
-    "author": "J.K. Rowling",
-    "format": "e-book"
+    "isbn": "9798200153800",
+    "title": "A Dowry of Blood",
+    "author": "S.T. Gibson",
+    "format": "Audiobook"
 },
 {
-    "isbn": "9780857660282",
-    "title": "Harry Potter and the Prisoner of Azkaban",
-    "author": "J.K. Rowling",
-    "format": "e-book"
+    "isbn": "1406356883",
+    "title": "Clockwork Angel",
+    "author": "Cassandra Clare",
+    "format": "HardCover"
 },
 {
-    "isbn": "0553096095",
-    "title": "Harry Potter and the Goblet of Fire",
-    "author": "J.K. Rowling",
+    "isbn": "9780689867040",
+    "title": "Tithe: A Modern Faerie Tale",
+    "author": "Holly Black",
     "format": "Hardcover"
 },
 {
-    "isbn": "05530962356",
-    "title": "Harry Potter and the Order of the Phoenix",
-    "author": "J.K. Rowling",
-    "format": "Hardcover"
+    "isbn": "1679910999.",
+    "title": "The Atlas Six",
+    "author": "Olivie Blake",
+    "format": "Paperback"
 },
 {
-    "isbn": "0553098976",
-    "title": "Harry Potter and the Half-Blood Prince",
-    "author": "J.K. Rowling",
-    "format": "Hardcover"
+    "isbn": "9781445014906",
+    "title": "The Song of Achilles",
+    "author": "Madeline Miller",
+    "format": "Audiobook"
 },
 {
-    "isbn": "0553093476",
-    "title": "Harry Potter and the Deathly Hallows",
-    "author": "J.K. Rowling",
+    "isbn": "978030774443",
+    "title": "The Night Circus",
+    "author": "Erin Morgenstern",
     "format": "Hardcover"
 },
 {
@@ -59,9 +59,9 @@ const BOOKS = [{
     "format": "Hardcover"
 },
 {
-    "isbn": "05531324511",
-    "title": "A Court of Silver Flames",
-    "author": "Sarah J. Maas",
+    "isbn": "9780060825430",
+    "title": "Coraline",
+    "author": "Neil Gaiman",
     "format": "Hardcover"
 }
 ]
