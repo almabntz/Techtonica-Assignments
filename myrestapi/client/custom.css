@@ -1,0 +1,22 @@
+body{
+    background-color:#FBE9C8;
+}
+.card{ 
+/*This manipulates how the image fits in that box*/
+    background-image: url("./bookspine3.png");
+    background-size:cover;
+    object-fit: contain;
+    
+/*This controls the dimensions of my boxes that contain book info*/
+    max-width: 800px;
+    box-shadow: 2px 2px 4px rgb(0, 0, 0);
+    padding: 10px;
+/*This will adjust the text on the books*/
+    text-align: center;
+    font-weight: bold;
+    font-family: Verdana,Tahoma, sans-serif;
+    color:aliceblue; 
+    font-size: medium;
+    
+
+}
