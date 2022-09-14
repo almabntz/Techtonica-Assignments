@@ -1,20 +1,25 @@
 import { useState } from "react";
 import Category from "./categories";
 
-//Will allow user to select a category and how many Qs they want
+//Will allow user to select how many Qs they want
 const QuizForm = () => {
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  const [question, setQuestion] = useState({});
   //use state func for categories
-  const [selectedCat, setSelectedCat] = useState("");
+  // const [selectedCat, setSelectedCat] = useState("");
   //use state for user values input (number of Qs, difficulty)
+
   const [values, setValues] = useState({
-    category: selectedCat,
+    // category: selectedCat,
     numQs: "",
   });
 
-  const dataFromChild = (childData) => {
-    setValues((values.category = { childData }));
-    setSelectedCat(childData);
-  };
+  // const dataFromChild = (childData) => {
+  //   setValues((values.category = { childData }));
+  //   setSelectedCat(childData);
+  // };
 
   //This returns a function which accepts an event as an input
   const set = (name) => {
@@ -27,8 +32,26 @@ const QuizForm = () => {
   // prevents page from reloading itself after submit.
   const handleSubmit = (event) => {
     event.preventDefault();
+
     //fetch from our server goes here
+    const loadData = () => {
+      fetch("http://localhost:9000/api/QuizForm")
+        .then((response) => response.json())
+        .then(
+          (data) => {
+            setIsLoaded(true);
+            console.log(data);
+            setQuestion(data);
+          },
+          (error) => {
+            setIsLoaded(true);
+            setError(error);
+          }
+        );
+    };
+
     //fetch localhost/api/questions POST goes here
+    5
     console.log(values);
   };
 
