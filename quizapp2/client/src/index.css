@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+.container{
+  /* this centers my card that renders my info*/
+  max-width: 1080px;
+  margin: 20px auto;
+  max-width: 500px;
+  box-shadow: 2px 2px 4px rgb(0, 0, 0);
+  padding: 10px;
+  background-color: rgba(209, 151, 110, 0.89);
+}

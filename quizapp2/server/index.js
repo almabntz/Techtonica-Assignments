@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 //Get request for the Games API
 app.get("/api/game", cors(), async (req, res) => {
 
-  const url = 'https://opentdb.com/api.php?amount=20&category=15&difficulty=easy&type=multiple';
+  const url = 'https://opentdb.com/api.php?amount=10&category=15&difficulty=easy&type=multiple';
   try {
     const response = await fetch(url);
     const data = await response.json();

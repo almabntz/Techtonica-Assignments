@@ -1,29 +1,50 @@
+/* this  is the entire app CSS*/
 .App {
-  background-color: #23ade3;
+  background-image: url("./components/pastel.PNG");
+  background-repeat: repeat;
   font-family: "Raleway", sans-serif;
   display:flex; 
   flex-direction:column; 
   justify-content:center;
+
 }
 
+
+/* header */
+.Header{
+  background-color:#F9E2F5;
+  width: 70%;
+  align-self: center;
+  /* this is creating the box at the top of my page */
+  max-width: 1080px;
+  padding-left: 540px;
+  padding-right: 540px;
+  padding-bottom: 25px;
+  /* this is what allowed me to expand my text box*/
+
+ 
+
+}
+
+
+  
+  /* //This is the Text inside the header */
 .textHeader{
-  align-self: center;
+  color:#D2B6C4;
+  /* align-self: center; */
+  
+  
 }
 
-.ListMain{
-  align-self: center;
-}
 
-.question-count{
-  margin-top: 10px;
-}
-
+/* This container controls the question cards */
 .Container {
   display: table-cell;
   vertical-align: middle;
   align-self: center;
 }
 
+/* This container ALSO controls the question cards */
 .question-section{
   /* Change background color */
   background-color: rgb(215, 219, 243);
@@ -33,21 +54,30 @@
 
   /* Add space between the border and the content */
   padding: 25px;
-
   border-radius: 12px;
-
   width: 70%;
-
   margin: 20px;
 
 }
 
+/* this is the msg at the bottom of my page */
+/* .results-msg {
+ 
+  
+   color:#f80303; 
+  
+  } */
 
 
-.results-msg {
+  /* ??? */
 
-color:azure;
-
-}
-
-
+  .ListMain{
+    align-self: center;
+    
+  }
+  
+  .question-count{
+    margin-top: 10px;
+    
+  }
+  

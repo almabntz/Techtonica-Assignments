@@ -1,14 +1,14 @@
 const Header = (props) => {
   let message;
   if (props.user) {
-    message = `Welcome, ${props.user} !`;
+    message = `Welcome, ${props.user} lets test your videogame smarts!`;
   } else {
     message = `Welcome!`;
   }
 
   return (
     <div className={"textHeader"}>
-      <h3>{message}</h3>
+      <h1>{message}</h1>
     </div>
   );
 };

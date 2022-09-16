@@ -2,14 +2,16 @@ import { useState, useEffect } from "react";
 import QuestionCard from "./questioncard";
 
 const Game = (props) => {
-  const [questions, setQuestions] = useState([]);
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [questions, setQuestions] = useState([]); // stores all my questions
+  const [error, setError] = useState(null); //error mesg catch all for when API doesnt load
+  const [isLoaded, setIsLoaded] = useState(false); // for promise statement
+  const [count, setCount] = useState(0); // keeps track of score
 
   //NEW CODE THAT MIGHT BREAK PAGE,
-  //CREATING COUNTER AND SCORE
-  const [count, updateCount] = useState(0);
-  // const [showScore, setShowScore] = useState();
+  const userCorrect = (answer) => {
+    if (answer) {
+    }
+  };
 
   //this is fetching data from my API. error msg included.
   const loadData = () => {
@@ -23,10 +25,12 @@ const Game = (props) => {
       });
   };
 
+  //NEW CODE
+
   useEffect(() => {
     loadData();
   }, []);
-
+  //error catching
   if (error) {
     return <div>error:{error.message}</div>;
   } else if (!isLoaded) {
@@ -40,11 +44,18 @@ const Game = (props) => {
         </div>
         {questions.map((question, index) => {
           // index is to assign a unique key to each item within map.function
-          return <QuestionCard key={index} question={question} />;
+          return (
+            <QuestionCard
+              count={count}
+              setCount={setCount}
+              key={index}
+              question={question}
+            />
+          );
         })}
 
         <div className="results-msg">
-          <h3>Your Final Score</h3>
+          <h3>Your Final Score {count}</h3>
         </div>
       </div>
     );

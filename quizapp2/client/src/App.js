@@ -12,8 +12,10 @@ function App() {
 
   return (
     <div className="App">
+      <div className="Header">
       <Header user={user} />
       <UserForm grabUser={handleUser} />
+      </div>
       {user ? <Game /> : null}
     </div>
   );

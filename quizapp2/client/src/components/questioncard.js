@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
+// import Confetti from "react-confetti";
 
 //THIS IS WHERE LOGIC AND USE STATE GO
-const QuestionCard = ({ question }) => {
-  const [testCorrect, setTestCorrect] = useState("False");
-  // const [count, incCount] = useState(0);
-  // function will make special char appear on page, will pass them through function
+const QuestionCard = ({ question, count, setCount }) => {
+  const [testCorrect, setTestCorrect] = useState("False"); // validates if submited response is correct
+  const [confetti, setConfetti] = useState(false); // creates confetti
+
+  //QUALITY OF LIFE CODE
+  // function will make special char appear on page, will pass them through function as string
   function decodeHtml(html) {
     var txt = document.createElement("textarea");
     txt.innerHTML = html;
@@ -12,16 +15,25 @@ const QuestionCard = ({ question }) => {
   }
   //score validation, created an event  that tests correct answer vs your choice
   const handleClick = (e) => {
+   
     console.log(e.target.value, "your answer");
     console.log(question.correct_answer, "correct answer");
+   
     if (e.target.value == question.correct_answer) {
       e.target.style.backgroundColor = "green";
       setTestCorrect("True");
+      setCount((c) => c + 1)
+      // setConfetti(true);
       console.log(testCorrect);
-    }
+    } else {
+      e.target.style.backgroundColor = "red"; 
+      // setConfetti(false);  
+    }; 
+    
   };
 
-  //
+  //THIS IS CALLING ALL THE LOGIC I JUST CREATED
+  //BE SURE EVERYTHING REFRENCED ABOVE IS BEING USED BELOW OR CODE WILL BREAK
   return (
     <div className={"question-section"}>
       <div className="question-text">{decodeHtml(question.question)}</div>
@@ -41,7 +53,7 @@ const QuestionCard = ({ question }) => {
         </button>
       </div>
       <br></br>
-      {testCorrect}
+      {testCorrect} 
     </div>
   );
 };
