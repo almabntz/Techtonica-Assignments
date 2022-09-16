@@ -1,9 +1,9 @@
 const Header = (props) => {
   let message;
   if (props.user) {
-    message = `Welcome, ${props.user} lets test your videogame smarts!`;
+    message = `Welcome, ${props.user}! Lets Test Your Videogame Smarts!`;
   } else {
-    message = `Welcome!`;
+    message = `Welcome To My Quiz App, Techtonica!`;
   }
 
   return (

@@ -17,12 +17,12 @@ const UserForm = (props) => {
         <form onSubmit={handleSubmit}>
           <input
             type="text"
-            placeholder="Please enter your name"
+            placeholder="Enter Your Name"
             className="input"
             value={value}
             onChange={(e) => setValue(e.target.value)}
           />
-          <button type="submit">Send</button>
+          <button className="submitbutt" type="submit">lets go!</button>
         </form>
       </div>
     </div>
