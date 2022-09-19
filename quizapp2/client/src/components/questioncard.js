@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 //THIS IS WHERE LOGIC AND USE STATE GO
 const QuestionCard = ({ question, count, setCount }) => {
   const [testCorrect, setTestCorrect] = useState("False"); // validates if submited response is correct
-  const [confetti, setConfetti] = useState(false); // creates confetti
+  // const [confetti, setConfetti] = useState(false); // creates confetti
 
   //QUALITY OF LIFE CODE
   // function will make special char appear on page, will pass them through function as string

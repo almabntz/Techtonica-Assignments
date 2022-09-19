@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import QuestionCard from "./questioncard";
-
+import Confetti from "react-confetti";
 const Game = (props) => {
   const [questions, setQuestions] = useState([]); // stores all my questions
   const [error, setError] = useState(null); //error mesg catch all for when API doesnt load
@@ -56,11 +56,12 @@ const Game = (props) => {
 
         <div className="results-msg">
           <h3>Your Final Score {count}</h3>
-        </div>
+          </div>
+        
       </div>
     );
   }
 };
 export default Game;
-
+// <Confetti />
 //curently on line 41, have added a button, need to create function that will handle that submit action

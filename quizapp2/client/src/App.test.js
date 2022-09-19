@@ -14,3 +14,10 @@ describe("App", () => {
     render(<App />);
   });
 });
+
+//test
+escribe("Form", () => {
+  test("render the Form component", () => {
+    render(<Form />);
+  });
+});
