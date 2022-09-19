@@ -1,13 +1,11 @@
 import calendar from "../calendar.png";
 
 const Header = () => {
-
   return (
-
-      <header>
-        <img src={calendar} alt="Calendar Star Logo" />
-        <h1>Eventonica</h1>
-      </header>
+    <header>
+      <img src={calendar} alt="Calendar Star Logo" />
+      <h1>Eventonica</h1>
+    </header>
   );
 };
 
