@@ -1,0 +1,106 @@
+/* this  is the entire app CSS */
+.App {
+  background-image: url("./components/pastel.PNG");
+  background-repeat: repeat;
+  font-family: "Raleway", sans-serif;
+  display:flex; 
+  flex-direction:column; 
+  justify-content:center;
+  color:#F19CD9;
+}
+
+
+/* header */
+.Header{
+  background-color:#F9E2F5;
+  width: 70%;
+  align-self: center;
+  /* this is creating the box at the top of my page */
+  max-width: 1080px;
+  padding-left: 540px;
+  padding-right: 540px;
+  padding-bottom: 25px;
+  /* this is what allowed me to expand my text box*/
+}
+
+
+  
+  /* //This is the Text inside the header */
+.textHeader{
+  color:#D2B6C4;
+  /* align-self: center; */
+  
+  
+}
+
+/* button at the top of my page, inside the header */
+.submitbutt {
+  background-color: #F7B6E5;
+  border: 1px solid #F7B6E5;
+  border-radius: 2px;
+}
+
+
+  /* text at the top of my page that says "lets begin quiz" */
+  .question {
+    color:#C7F4FA;
+    text-align:center ;
+    text-shadow: 0 0 3px rgb(0, 1, 6)0, 0 0 5px #000006;
+    background-color: #0594b8;
+    border-radius: 10px;
+    
+  }
+
+/* This container controls the question cards */
+.Container {
+  display: table-cell;
+  vertical-align: middle;
+  align-self: center;
+  width: 75%;
+}
+
+/* This container ALSO controls the question cards */
+.question-section{
+  /* Change background color */
+  background-color: rgb(215, 219, 243);
+
+  /* Add border */
+  border: 1px solid #bacdd8;
+
+  /* Made my question cards bigger, spaced them away from each other */
+  padding: 25px;
+  border-radius: 12px;
+  margin: 20px;
+  color: #42A2B8;
+}
+  
+/* these are the buttons user selects to pick an answer choice*/
+  .button{
+    background-color:#C7F4FA;
+    border-radius: 2px;
+    transition-duration: 0.4s;
+    float: left;
+    border: 1px solid #4FD0EF;
+    align-self: center;
+}
+/* this created a hover effect that changes button color and text color */
+.button:hover {
+  background-color:#F1F9FA;
+  color:#F19CD9;
+  }
+
+
+  /* text at the bottom of my page that says score */
+  .results-msg {
+ 
+    color:#C7F4FA;
+    text-align:center ;
+    text-shadow: 0 0 3px rgb(0, 1, 6)0, 0 0 5px #000006;
+    background-color: #0594b8;
+    padding: 20px;
+    border-radius: 10px;
+    
+   
+   }
+ 
+ 
