@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+//The prop created in the parent on line 36 is being called here!!
 const DeleteUser = ({ deleteUser }) => {
   const [id, setId] = useState("");
   const handleSubmit = (e) => {
