@@ -1,5 +1,6 @@
 import { useReducer } from "react";
 import { useState } from "react";
+import DeleteEvent from "./DeleteEvent";
 
 //hard codede events to test functionality
 const event1 = {
@@ -56,7 +57,13 @@ const Events = () => {
   //lets map out these hard coded events from the top of my page--------------------------------------
   //use state for events established
   const [events, setEvents] = useState([event1, event2, event3]);
-
+  const [newEvent, setNewEvent] = useState({
+    id: "",
+    name: "",
+    date: "",
+    description: "",
+    category: "",
+  });
   //lets establish INITIAL STATE for this event form---------------------------------------------------
   const initialState = {
     id: "",
@@ -69,10 +76,17 @@ const Events = () => {
   //this is using useReducer which is imported from react on line 1------------------------------------------
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  //lets create an event handler for when these forms are submitted-------------------------------------------
+  //lets create an event handler for when new events are submitted-------------------------------------------
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(state);
     setEvents([...events, state]);
+  };
+
+  //NEW CODE MIGHT BREAK MY PAGE :,)
+  const deleteEvent = (deleteEvent) => {
+    const newEvent = events.filter((i) => i.id !== deleteEvent);
+    setEvents(newEvent);
   };
 
   //return statement... heres where all the logic i created is being called-------------------------------
@@ -87,7 +101,6 @@ const Events = () => {
           {events.map((event, index) => {
             return (
               <li key={index}>
-                {""}
                 Name:{event.name}, Description:{event.description}, Date: {""}{" "}
                 {event.date}, Id: {event.id}, Category: {event.category}
               </li>
@@ -95,6 +108,7 @@ const Events = () => {
           })}
           <li>...</li>
         </ul>
+
         {/*----------------THIS IS WHERE I RETURN ONSUBMIT ADDED EVENTS---------------------------------------*/}
         <h3>Add Event</h3>
         <form id="add-event" action="#" onSubmit={handleSubmit}>
@@ -120,7 +134,7 @@ const Events = () => {
               type="text"
               id="add-event-id"
               placeholder="Event ID"
-              value={ state.id }
+              value={state.id}
               onChange={(e) =>
                 dispatch({
                   type: "editID",
@@ -179,7 +193,10 @@ const Events = () => {
           {/* Add more form fields here */}
           <input type="submit" />
         </form>
+        {/*----------DELETE EVENTS----------------------------------------*/}
       </div>
+      {/* NEW CODE IMPORTING CHILD HERE*/}
+      <DeleteEvent deleteEvent={deleteEvent} />
     </section>
   );
 };
