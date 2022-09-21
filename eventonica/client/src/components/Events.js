@@ -137,7 +137,7 @@ const Events = () => {
               value={state.id}
               onChange={(e) =>
                 dispatch({
-                  type: "editID",
+                  type: "editId",
                   payload: e.target.value,
                 })
               }
