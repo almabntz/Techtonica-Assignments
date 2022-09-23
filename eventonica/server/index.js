@@ -63,12 +63,12 @@ app.delete("/users/:id", async (req, res) => {
   }
 });
 
-
+/*------------------------------------------------------------------- */
   //GET events listing
   app.get('/events', async function (req, res, next) {
 
     try {
-      const events = await db.any('SELECT * FROM events', [true]);
+      const events = await db.any('SELECT * FROM events');
       res.send(events);
     } catch (e) {
       return res.status(400).json({ e });
@@ -107,7 +107,6 @@ app.post("/events", async (req, res) => {
 
    //DELETE events listing
    app.delete("/events/:id", async (req, res) => {
-    // : acts as a placeholder
     const eventId = req.params.id;
     console.log(req.params.id);
     try {

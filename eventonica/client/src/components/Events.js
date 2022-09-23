@@ -1,5 +1,5 @@
 import { useReducer } from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import DeleteEvent from "./DeleteEvent";
 
 // //hard codede events to test functionality
@@ -52,6 +52,8 @@ const reducer = (state, action) => {
   }
 };
 
+
+
 //-----------------VVVV functionality for events added here VVVV--------------------------------------
 const Events = () => {
   //lets map out these hard coded events from the top of my page--------------------------------------
@@ -89,6 +91,19 @@ const Events = () => {
     setEvents(newEvent);
   };
 
+//fetching from DB for events
+const getEvents = async () => {
+  const response = await fetch('http://localhost:8080/events');
+  const events = await response.json();
+  setEvents(events);
+};
+
+useEffect(() => {
+  getEvents();
+}, []);
+
+
+
   //return statement... heres where all the logic i created is being called-------------------------------
   return (
     <section className="event-management">
@@ -119,7 +134,7 @@ const Events = () => {
             <input
               type="text"
               id="add-event-name"
-              placeholder="Mycology Fungi Meet Up"
+              placeholder="Mycology Meet Up"
               value={state.name}
               onChange={(e) =>
                 dispatch({
@@ -194,9 +209,8 @@ const Events = () => {
           </fieldset>
           {/* Add more form fields here */}
           <input type="submit" />
-            {/* NEW CODE IMPORTING CHILD HERE*/}
         </form>
-        {/*----------DELETE EVENTS----------------------------------------*/}
+        {/*----------DELETE EVENTS PASSED BACK HERE----------------------------------------*/}
         <DeleteEvent deleteEvent={deleteEvent} />
       </div>
     </section>
