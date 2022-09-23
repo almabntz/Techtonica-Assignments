@@ -2,30 +2,30 @@ import { useReducer } from "react";
 import { useState } from "react";
 import DeleteEvent from "./DeleteEvent";
 
-//hard codede events to test functionality
-const event1 = {
-  id: "1",
-  name: "Birthday",
-  date: "2021-09-01",
-  description: "A birthday party for my best friend",
-  category: "Celebration",
-};
+// //hard codede events to test functionality
+// const event1 = {
+//   id: "1",
+//   name: "Birthday",
+//   date: "2021-09-01",
+//   description: "A birthday party for my best friend",
+//   category: "Celebration",
+// };
 
-const event2 = {
-  id: "2",
-  name: "Graduation",
-  date: "2021-08-01",
-  description: "The class of 2021 graduates from East High",
-  category: "Education",
-};
+// const event2 = {
+//   id: "2",
+//   name: "Graduation",
+//   date: "2021-08-01",
+//   description: "The class of 2021 graduates from East High",
+//   category: "Education",
+// };
 
-const event3 = {
-  id: "3",
-  name: "JS Study Session",
-  date: "2021-10-01",
-  description: "A chance to practice Javascript interview questions",
-  category: "Education",
-};
+// const event3 = {
+//   id: "3",
+//   name: "JS Study Session",
+//   date: "2021-10-01",
+//   description: "A chance to practice Javascript interview questions",
+//   category: "Education",
+// };
 
 //REDUCER CODE!----------------------------------------------------------------------------
 const reducer = (state, action) => {
@@ -56,7 +56,7 @@ const reducer = (state, action) => {
 const Events = () => {
   //lets map out these hard coded events from the top of my page--------------------------------------
   //use state for events established
-  const [events, setEvents] = useState([event1, event2, event3]);
+  const [events, setEvents] = useState([]);
   const [newEvent, setNewEvent] = useState({
     id: "",
     name: "",
@@ -83,7 +83,7 @@ const Events = () => {
     setEvents([...events, state]);
   };
 
-  //NEW CODE MIGHT BREAK MY PAGE :,)
+  //delete events parent code
   const deleteEvent = (deleteEvent) => {
     const newEvent = events.filter((i) => i.id !== deleteEvent);
     setEvents(newEvent);
@@ -113,7 +113,9 @@ const Events = () => {
         <h3>Add Event</h3>
         <form id="add-event" action="#" onSubmit={handleSubmit}>
           <fieldset>
+            <br></br>
             <label>Name</label>
+            <br></br>
             <input
               type="text"
               id="add-event-name"
@@ -192,11 +194,11 @@ const Events = () => {
           </fieldset>
           {/* Add more form fields here */}
           <input type="submit" />
+            {/* NEW CODE IMPORTING CHILD HERE*/}
         </form>
         {/*----------DELETE EVENTS----------------------------------------*/}
+        <DeleteEvent deleteEvent={deleteEvent} />
       </div>
-      {/* NEW CODE IMPORTING CHILD HERE*/}
-      <DeleteEvent deleteEvent={deleteEvent} />
     </section>
   );
 };
