@@ -1,0 +1,72 @@
+/*all form field sets on my page*/
+fieldset {
+   border: none;
+
+}
+/*div for my search bar in header*/
+.header-search{
+  display: flex; 
+   align-items: center; 
+  
+}
+
+
+/* this contains the image and eventonica words*/
+header {
+  /* For more about flexbox, see https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+  display: flex;
+  align-items: center;
+  background-color: #0494BC;
+/* this is centering everything inside my header */
+  /* margin: 20px auto; */
+  justify-content:center;
+  /* display: flex; */
+  padding: 20px;
+}
+
+header img {
+  height: 64px;
+}
+
+
+/* this controls my users div*/
+.user-management{
+  padding: 20px;
+  /* background-color:rgba(240, 248, 255, 0.062); */
+}
+
+
+/*this controls events div*/
+.event-management{
+  padding: 20px;
+ /* background-color: rgba(240, 248, 255, 0.276); */
+}
+
+/*this controls my main pages setting*/
+main {
+  /* this is centering everything in my page */
+  max-width: 1080px;
+  margin: 20px auto;
+  justify-content:center;
+  justify-content: space-between;
+  background-color: #91BDC5;
+  padding: 20px;
+  padding-top: 10px;
+}
+
+/*this is my sidebar for find events*/
+aside {
+  /* margin: 10px auto; */
+  /* justify-content:center; */
+  display: flex; 
+  align-content: center;
+}
+
+footer {
+  margin-top: 1rem;
+  font-size: small;
+  color: gray;
+}
+.App {
+  background-color: aliceblue;
+}
