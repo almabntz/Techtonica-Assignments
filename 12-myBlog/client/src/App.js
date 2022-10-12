@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route}
     from 'react-router-dom';
 import Home from './pages/Home';
 import AboutMe from './pages/AboutMe';
+//import AddPost from './pages/addPost';
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
     <Routes>
         <Route exact path='/' element={<Home />} />
         <Route path='/AboutMe' element={<AboutMe/>} />
+       
     </Routes>
     </Router>
 

@@ -1,9 +1,11 @@
 import { useState } from "react";
 
 const AddPost = (props) => {
+  const [post, setPost]  = useState = ([]) 
   const [newPost, setNewPost] = useState({
-    Name: "",
-    Score: null,
+    Title: "",
+    Img: "",
+    Body: ""
   });
 
   //create functions that handle the event of the user typing into the form
@@ -26,25 +28,50 @@ const AddPost = (props) => {
 //     props.addPlayer(data);
 //   };
 
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     postName(player);
-//   };
+
+//incoming data from the form
+//this data needs to be passed to my DB for storage
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.savePost(newPost)
+    setPost({
+        Title: "",
+        Img: "",
+        Body: ""
+    })
+  };
+//Save post is created here in the childs logic
+// it will need to be passed to parent inside the return statement
+// addPost is child. Home is parent.
 
   return (
-    <form /*onSubmit={handleSubmit}*/>
+    <form className="add-Post-form" onSubmit={handleSubmit}>
       <fieldset>
-        <label>Name</label>
+        <label>Title:</label>
         <input
           type="text"
-          id="add-user-name"
-          placeholder="Your Name"
+          id="add-blog-title"
+          placeholder="Title your Post"
           required
-          //value={player.Name}
+        />
+           <label>Image:</label>
+        <input
+          type="text"
+          id="add-blog-image"
+          placeholder="Add image here"
+          //value={player.Name}  //THIS IS FOR EDIT FEATURE TOUCH BACK LATER
           /*onChange={handleNameChange}*/
         />
+         <label>Body:</label>
+        <textarea
+          name="postBody"
+          placeholder="Add body text to your post"
+          required
+          //value={values.aboutYou} //BUILT IN CODE FOR EDIT
+          //onChange={handleChange}
+        />
+        <button type="submit">Submit</button>
       </fieldset>
-      <button type="submit">Add</button>
     </form>
   );
 };
