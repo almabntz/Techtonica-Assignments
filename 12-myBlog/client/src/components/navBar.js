@@ -1,21 +1,25 @@
 import React from "react";
-import { Nav, NavLink, NavMenu } 
-    from "./navBarElements";
+
   
-const Navbar = () => {
+const Navbar = ({setView}) => {
   return (
-    <>
-      <Nav>
-        <NavMenu>
-          <NavLink to="/" activeStyle>
-            Home
-          </NavLink>
-          <NavLink to="AboutMe" activeStyle>
-            About Me
-          </NavLink>
-        </NavMenu>
-      </Nav>
-    </>
+    //This is being imported to App.JS and passing this data so that they appear as buttons
+    //this piece of code is also the part the user sees as the "Nav bar" that they intereact with
+    
+    <div className="navbar-container">
+      <div className="navbar-btn" onClick={() => setView("home")}>
+        <h2>Home</h2>
+      </div>
+      <div className="navbar-btn" onClick={() => setView("aboutMe")}>
+        <h2>About Me</h2>
+      </div>
+      <div className="navbar-btn" onClick={() => setView("favorite")}>
+        <h2>Favorites</h2>
+      </div>
+      <div className="navbar-btn" onClick={() => setView("addPost")}>
+        <h2>+ Add Post</h2>
+      </div>
+    </div>
   );
 };
   

@@ -1,14 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import {Routes, Route, useNavigate} from 'react-router-dom'
-import AddPost from './addPost';
+import AddPost from './AddPost';
 
 const Home = () => {
-    const navigate = useNavigate ();
     const [createPost, setCreatePost] = useState([]);
-    const navigateToaddPost = () => {
-        //navigate to addPost page this is a form
-        navigate( '/addPost');
-    };
+  
 
 //fetch from DB
 //this is my GET request
@@ -46,15 +41,11 @@ const addNewPost = async (newPost) => {
 
 
 return (
-	<div> {/*this is my parent div that holds my whole return statement*/}
+	<div>
 	<h1>HOME PAGE</h1>
     <div className='left-menu'>
         <h1>This is my add new post section</h1>
-        <button onClick={ navigateToaddPost }>+ New Post</button>
-
-        <Routes>
-            <Route path= "/addPost"  element={ <AddPost/> } />
-        </Routes>
+        <AddPost />
     </div>
 	</div>
 );

@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const AddPost = (props) => {
-  const [post, setPost]  = useState = ([]) 
+  const [post, setPost]  = useState ([]) 
   const [newPost, setNewPost] = useState({
     Title: "",
     Img: "",
@@ -31,21 +31,21 @@ const AddPost = (props) => {
 
 //incoming data from the form
 //this data needs to be passed to my DB for storage
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    props.savePost(newPost)
-    setPost({
-        Title: "",
-        Img: "",
-        Body: ""
-    })
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   props.savePost(newPost)
+  //   setPost({
+  //       Title: "",
+  //       Img: "",
+  //       Body: ""
+  //   })
+  // };
 //Save post is created here in the childs logic
 // it will need to be passed to parent inside the return statement
 // addPost is child. Home is parent.
 
   return (
-    <form className="add-Post-form" onSubmit={handleSubmit}>
+    <form /*className="add-Post-form" onSubmit={handleSubmit} */>
       <fieldset>
         <label>Title:</label>
         <input
