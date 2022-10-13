@@ -110,14 +110,17 @@ float: Top;
 /*-----------------This is my ADD POST Styles-------------------------------*/
 
 .add-Post-form{
-  
+    /* border-width: 5px;
+    border-style: solid; */
+     text-align: left;
+    height: 425px;
+     margin: auto;
+     width: 1100px;
+     margin-top: 20px;
+     padding-bottom: 300px;
+}
 
-    border-width: 5px;
-    border-style: solid;
-     text-align: center;
-    width: 50%;
-    height: 100%;
-  dispay: flex;
-  margin: auto;
- 
+form textarea {
+  min-height: 300px;
+  min-width: 1000px;
 }

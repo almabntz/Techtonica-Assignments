@@ -69,13 +69,16 @@ const AddPost = (props) => {
           <br></br>
           <br></br>
          <label>Body:</label>
-        <textarea
+         <br></br>
+         <br></br>
+        <textarea className="textarea"
           name="postBody"
           placeholder="Add body text to your post"
           required
           //value={values.aboutYou} //BUILT IN CODE FOR EDIT
           //onChange={handleChange}
         />
+        <br></br>
         <button type="submit">Submit</button>
       </fieldset>
     </form>
