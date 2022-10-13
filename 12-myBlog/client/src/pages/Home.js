@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import AddPost from './AddPost';
+import BlogCard from './blogCard';
 
 const Home = () => {
     const [createPost, setCreatePost] = useState([]);
   
+  
 
 //fetch from DB
+
 //this is my GET request
 const getPost = async () => {
     const response = await fetch ('http://localhost:8080/myposts'); //My DB is myBlogs, myposts is a table in that DB
@@ -37,19 +40,31 @@ const addNewPost = async (newPost) => {
 
 return (
 	<div>
+
+    <div>
 	<h1>HOME PAGE</h1>
-    <div className='left-menu'>
+    <div className='left-menu'> 
+    <div>
+
+    </div>
+
+    </div>
         <h1>This is my add new post section</h1>
         <AddPost savePost={addNewPost} />
     </div>
+
+        {createPost.map((myPosts, index) => {
+          return (
+            <BlogCard
+                myPosts2= {myPosts}
+            />
+          );
+        })}
+
+    
+   
 	</div>
 );
 };
 
 export default Home;
-
-//TO DO
-//pass AddPost back 
-
-
-

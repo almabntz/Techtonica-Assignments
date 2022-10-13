@@ -42,10 +42,10 @@ const AddPost = (props) => {
         Body: ""
     })
   };
+
 //Save post is created here in the childs logic
 // it will need to be passed to parent inside the return statement
 // addPost is child. Home is parent.
-
   return (
     <form className="add-Post-form" onSubmit={handleSubmit} >
       <fieldset>
