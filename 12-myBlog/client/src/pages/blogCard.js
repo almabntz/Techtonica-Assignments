@@ -1,6 +1,7 @@
 const BlogCard = ({myPosts2}) => {
 
  return (
+    <div className="blog-wrap">
     <div className="blog-card">
         <div className="blog-contents">
 
@@ -16,6 +17,7 @@ const BlogCard = ({myPosts2}) => {
        <p>{myPosts2.body}</p> 
        </div>
 
+    </div>
     </div>
     </div>
  );

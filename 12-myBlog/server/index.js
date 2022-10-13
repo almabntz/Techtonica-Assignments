@@ -55,7 +55,16 @@ app.post("/myposts", async (req,res) => {
   }
 });
 
+// GET for my aboutMe section
+app.get('/aboutme', async function (req, res, next) {
 
+  try {
+    const aboutme = await db.any('SELECT * FROM aboutme', [true]);
+    res.send(aboutme);
+  } catch (e) {
+    return res.status(400).json({ e });
+  }
+});
 
 
 

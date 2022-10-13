@@ -56,6 +56,8 @@ const AddPost = (props) => {
           placeholder="Title your Post"
           required
         />
+        <br></br>
+        <br></br>
            <label>Image:</label>
         <input
           type="text"
@@ -64,6 +66,8 @@ const AddPost = (props) => {
           //value={player.Name}  //THIS IS FOR EDIT FEATURE TOUCH BACK LATER
           /*onChange={handleNameChange}*/
         />
+          <br></br>
+          <br></br>
          <label>Body:</label>
         <textarea
           name="postBody"

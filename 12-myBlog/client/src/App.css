@@ -1,50 +1,123 @@
 .App {
   text-align: center;
+  background-color: #FCF4F4;
+  color: #a17e7e;
+ 
 }
 
 /*This is staking my links next to each other and 
 keeping them from being on top of each other*/
 .navbar-container{
   overflow: hidden; /* will contain if #first is longer than #second */
+  
+}
+
+.user-wrap{
+  float:left;
 }
 
 /*This is controling my text that links me to diff pages
 its centering my links and spacing them from each other*/
 .navbar-btn {
   float: left;
-  padding-right: 50px;
+  padding-right: 10px;
   padding-left: 10px;
+  color: #a17e7e;
+  
+
+}
+
+.logo{
+ text-align: left;
+ font-size: xx-large;
+ font-family:'Lucida Sans', 'Lucida Sans Regular';
+}
+
+.nav-img{
+  width: 150px;
+  float:left;
+  padding: 40px;
+  border-radius: 200px;
 }
 
 /*this is wrapped around my navbar div
 its creating my nav bars box*/
 .wrap {
-background-color: pink;
+background-color: #F4E4E4; 
 max-width: 1080px;
- padding-left: 400px;
+ padding-left: 300px;
+ padding-right: 300px;
  padding-bottom: 10px;
- padding-top: 50px;
-
+ padding-top: 10px;
 }
+
+/*------------------THIS IS ALL STYLING FOR MY HOME PAGE-------------------------------------------*/
 
 .blog-card {
 padding-left: 10px;
 padding: 50px;
-background-color: grey;
+background-color:#F4E4E4;
 width:700px;
 margin: 0 auto;
- width: 50%;
+width: 50%;
+border-radius: 30px;
 
 }
 
 /*images inside blog posts*/
 .post-img {
   width: 400px;
-  float:left;
+  float:right;
   padding: 10px;
 }
 
 /*controls text color*/
 .blog-contents{
-color: antiquewhite;
+color: #a17e7e;
+}
+
+.blog-wrap{
+  padding: 15px;
+}
+
+/*---------------------THIS IS ALL STYLING FOR MY ABOUT ME PAGE-----------------------------------------------*/
+.about-me{
+
+margin: 20px;
+padding-left: 10px;
+padding: 50px;
+/* background-color: grey; */
+margin: 0 auto;
+width: 65%;
+}
+
+.about-title{
+color: #a17e7e;
+float: Top;
+}
+
+.about-img{
+  width: 400px;
+  float:right;
+  padding: 10px;
+  border-radius: 100px;
+}
+
+.about-body{
+  color: #a17e7e;
+}
+
+/*-----------------This is my ADD POST Styles-------------------------------*/
+
+.add-Post-form{
+  
+
+    border-width: 5px;
+    border-style: solid;
+     text-align: center;
+    width: 50%;
+    height: 100%;
+  dispay: flex;
+  margin: auto;
+ 
 }

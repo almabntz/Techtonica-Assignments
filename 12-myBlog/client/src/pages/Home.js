@@ -19,9 +19,10 @@ useEffect(() => {
 }, [createPost]);
 
 
-//ADD for post 
+
 // This data is acting from the parent, "Home.js"
 //my addPost page will be the child that will have the form for the data
+//ADD for post 
 const addNewPost = async (newPost) => {
     console.log(newPost)
     const response = await fetch ("http://localhost:8080/myposts", { //My DB is myBlogs, myposts is a table in that DB
@@ -39,29 +40,17 @@ const addNewPost = async (newPost) => {
 
 return (
 	<div>
-
-    <div>
-	<h1>HOME PAGE</h1>
-    <div className='left-menu'> 
-    <div>
-
-    </div>
-
-    </div>
-        <h1>This is my add new post section</h1>
-        <AddPost savePost={addNewPost} />
-    </div>
-
-        {createPost.map((myPosts, index) => {
+       
+    <div> 
+    {createPost.map((myPosts, index) => {
           return (
             <BlogCard
                 myPosts2= {myPosts}
             />
           );
         })}
-
-    
-   
+    </div>
+        <AddPost savePost={addNewPost} />
 	</div>
 );
 };
