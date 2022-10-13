@@ -24,8 +24,27 @@ max-width: 1080px;
  padding-left: 400px;
  padding-bottom: 10px;
  padding-top: 50px;
+
 }
 
 .blog-card {
 padding-left: 10px;
+padding: 50px;
+background-color: grey;
+width:700px;
+margin: 0 auto;
+ width: 50%;
+
+}
+
+/*images inside blog posts*/
+.post-img {
+  width: 400px;
+  float:left;
+  padding: 10px;
+}
+
+/*controls text color*/
+.blog-contents{
+color: antiquewhite;
 }

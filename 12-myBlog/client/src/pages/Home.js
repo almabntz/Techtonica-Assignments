@@ -8,7 +8,6 @@ const Home = () => {
   
 
 //fetch from DB
-
 //this is my GET request
 const getPost = async () => {
     const response = await fetch ('http://localhost:8080/myposts'); //My DB is myBlogs, myposts is a table in that DB

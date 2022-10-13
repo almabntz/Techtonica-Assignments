@@ -16,19 +16,19 @@ const AddPost = (props) => {
 //   };
 
 
-
+//----------------------------VVVV  REWRITE THIS PIECE OF CODE TO FIT VVV-------------------------------------
   //function to handle the post request
-//   const postName = async (newPlayer) => {
-//     const response = await fetch("http://localhost:3000/players", {
-//       method: "POST",
-//       headers: { "Content-Type": "application/json" },
-//       body: JSON.stringify(newPlayer),
-//     });
-//     const data = await response.json();
-//     console.log("From the post ", data);
-//     props.addPlayer(data);
-//   };
-
+  // const myPost = async (getMyPost) => {
+  //   const response = await fetch("http://localhost:8080/myposts", {
+  //     method: "POST",
+  //     headers: { "Content-Type": "application/json" },
+  //     body: JSON.stringify(getMyPost),
+  //   });
+  //   const data = await response.json();
+  //   console.log("From the post ", data);
+  //   props.myPost(data);
+  // };
+//---------------------------- ^^^^^ REWRITE THIS PIECE OF CODE TO FIT ^^^^-------------------------------------
 
 // incoming data from the form
 // this data needs to be passed to my DB for storage
