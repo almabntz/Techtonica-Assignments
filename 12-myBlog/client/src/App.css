@@ -2,6 +2,28 @@
   text-align: center;
 }
 
-.left-menu{
-  text-align:left;
+
+/*This is staking my links next to each other and 
+keeping them from being on top of each other*/
+.navbar-container{
+  overflow: hidden; /* will contain if #first is longer than #second */
+}
+
+/*This is controling my text that links me to diff pages
+its centering my links and spacing them from each other*/
+.navbar-btn {
+  float: left;
+  padding-right: 50px;
+  padding-left: 10px;
+}
+
+
+/*this is wrapped around my navbar div
+its creating my nav bars box*/
+.wrap {
+  background-color: plum;
+  max-width: 1080px;
+ padding-left: 400px;
+ padding-bottom: 10px;
+ padding-top: 50px;
 }

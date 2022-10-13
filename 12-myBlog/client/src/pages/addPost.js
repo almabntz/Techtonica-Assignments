@@ -8,6 +8,7 @@ const AddPost = (props) => {
     Body: ""
   });
 
+
   //create functions that handle the event of the user typing into the form
 //   const handleNameChange = (event) => {
 //     const name = event.target.value;
@@ -29,23 +30,24 @@ const AddPost = (props) => {
 //   };
 
 
-//incoming data from the form
-//this data needs to be passed to my DB for storage
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   props.savePost(newPost)
-  //   setPost({
-  //       Title: "",
-  //       Img: "",
-  //       Body: ""
-  //   })
-  // };
+// incoming data from the form
+// this data needs to be passed to my DB for storage
+// HANDLE SUBMIT
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.savePost(newPost)  //savePost is a guarded callback!
+    setPost({
+        Title: "",
+        Img: "",
+        Body: ""
+    })
+  };
 //Save post is created here in the childs logic
 // it will need to be passed to parent inside the return statement
 // addPost is child. Home is parent.
 
   return (
-    <form /*className="add-Post-form" onSubmit={handleSubmit} */>
+    <form className="add-Post-form" onSubmit={handleSubmit} >
       <fieldset>
         <label>Title:</label>
         <input

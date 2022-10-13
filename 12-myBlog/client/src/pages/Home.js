@@ -32,12 +32,7 @@ const addNewPost = async (newPost) => {
 };
 
 
-
-//still need to use addNewPost in return statement
-
-
-
-
+//still need to create DELETE logic 
 
 
 return (
@@ -45,7 +40,7 @@ return (
 	<h1>HOME PAGE</h1>
     <div className='left-menu'>
         <h1>This is my add new post section</h1>
-        <AddPost />
+        <AddPost savePost={addNewPost} />
     </div>
 	</div>
 );
@@ -54,5 +49,7 @@ return (
 export default Home;
 
 //TO DO
-//create logic for AddPost. pass it into home
-//Create form for Addpost.
+//pass AddPost back 
+
+
+

@@ -15,6 +15,13 @@ app.use(cors());
 app.use(bodyparser.urlencoded({extended: false}))
 app.use(bodyparser.json())
 
+//end point for route
+app.get('/', (request, response) => {
+  response.json({ info: 'Hello! Node.js, Express, and Postgres API' })
+})
+
+
+
 // GET from table myposts
 //this will be under http://localhost:8080/myposts
 app.get('/myposts', async function (req, res, next) {
@@ -52,10 +59,7 @@ app.post("/myposts", async (req,res) => {
 
 
 
-//end point for route
-app.get('/', (request, response) => {
-    response.json({ info: 'Hello! Node.js, Express, and Postgres API' })
-  })
+
 
   //should populate in console when server is launched
 app.listen(PORT, () => console.log(`Hola! Server is running on port ${PORT}`));
