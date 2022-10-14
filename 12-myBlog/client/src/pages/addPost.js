@@ -1,42 +1,22 @@
+import React from "react";
 import { useState } from "react";
 
-const AddPost = (props) => {
-  const [post, setPost]  = useState ([]) 
-  const [newPost, setNewPost] = useState({
-    Title: "",
-    Img: "",
-    Body: ""
-  });
-
-
-  //create functions that handle the event of the user typing into the form
-//   const handleNameChange = (event) => {
-//     const name = event.target.value;
-//     setPlayer((player) => ({ ...player, name }));
-//   };
-
-
-//----------------------------VVVV  REWRITE THIS PIECE OF CODE TO FIT VVV-------------------------------------
-  //function to handle the post request
-  // const myPost = async (getMyPost) => {
-  //   const response = await fetch("http://localhost:8080/myposts", {
-  //     method: "POST",
-  //     headers: { "Content-Type": "application/json" },
-  //     body: JSON.stringify(getMyPost),
-  //   });
-  //   const data = await response.json();
-  //   console.log("From the post ", data);
-  //   props.myPost(data);
-  // };
-//---------------------------- ^^^^^ REWRITE THIS PIECE OF CODE TO FIT ^^^^-------------------------------------
+const AddPost = ({addNewPost, setNewPost, newPost}) => {
+  //const [post, setPost]  = useState ([]) 
+  // const [newPost, setNewPost] = useState({
+  //   Title: "",
+  //   Img: "",
+  //   Body: ""
+  // });/
+//------NEW CODE-------------
 
 // incoming data from the form
 // this data needs to be passed to my DB for storage
 // HANDLE SUBMIT
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.savePost(newPost)  //savePost is a guarded callback!
-    setPost({
+    addNewPost(newPost)  
+    setNewPost({
         Title: "",
         Img: "",
         Body: ""
@@ -55,6 +35,8 @@ const AddPost = (props) => {
           id="add-blog-title"
           placeholder="Title your Post"
           required
+          value= {newPost.Title}
+          onChange={(e) => { setNewPost((prev) => ({ ...prev, Title: e.target.value, })); }}
         />
         <br></br>
         <br></br>
@@ -63,8 +45,8 @@ const AddPost = (props) => {
           type="text"
           id="add-blog-image"
           placeholder="Add image here"
-          //value={player.Name}  //THIS IS FOR EDIT FEATURE TOUCH BACK LATER
-          /*onChange={handleNameChange}*/
+          value= {newPost.Img}
+          onChange={(e) => { setNewPost((prev) => ({ ...prev, Img: e.target.value, })); }}
         />
           <br></br>
           <br></br>
@@ -75,11 +57,11 @@ const AddPost = (props) => {
           name="postBody"
           placeholder="Add body text to your post"
           required
-          //value={values.aboutYou} //BUILT IN CODE FOR EDIT
-          //onChange={handleChange}
+          value= {newPost.Body}
+          onChange={(e) => { setNewPost((prev) => ({ ...prev, Body: e.target.value, })); }}
         />
         <br></br>
-        <button type="submit">Submit</button>
+        <button type="submit">Post</button>
       </fieldset>
     </form>
   );

@@ -2,27 +2,31 @@ import React, { useEffect, useState } from 'react';
 import AddPost from './AddPost';
 import BlogCard from './blogCard';
 
-const Home = () => {
+const Home = (props) => {
     const [createPost, setCreatePost] = useState([]);
-  
+    //new code
+    const [newPost, setNewPost] = useState({
+        Title: "",
+        Img: "",
+        Body: ""
+      });
   
 
 //fetch from DB
 //this is my GET request
 const getPost = async () => {
-    const response = await fetch ('http://localhost:8080/myposts'); //My DB is myBlogs, myposts is a table in that DB
-    const myPosts = await response.json ();
-    setCreatePost(myPosts)
+    const response = await fetch ('http://localhost:8080/myposts');
+    const myBlogPosts = await response.json ();
+    setCreatePost(myBlogPosts)    
 };
 useEffect(() => {
     getPost();
 }, [createPost]);
 
 
-
 // This data is acting from the parent, "Home.js"
 //my addPost page will be the child that will have the form for the data
-//ADD for post 
+//POST for post 
 const addNewPost = async (newPost) => {
     console.log(newPost)
     const response = await fetch ("http://localhost:8080/myposts", { //My DB is myBlogs, myposts is a table in that DB
@@ -32,6 +36,7 @@ const addNewPost = async (newPost) => {
     })
     const data = await response.json ();
     console.log(data); //this is data from the new post
+    getPost();
 };
 
 
@@ -50,9 +55,9 @@ return (
           );
         })}
     </div>
-        <AddPost savePost={addNewPost} />
+        <AddPost newPost={newPost} setNewPost={setNewPost} addNewPost ={addNewPost} />
 	</div>
 );
 };
-
+//prop key setnew post assigning setnewpost
 export default Home;

@@ -18,7 +18,7 @@ app.use(bodyparser.json())
 //end point for route
 app.get('/', (request, response) => {
   response.json({ info: 'Hello! Node.js, Express, and Postgres API' })
-})
+});
 
 
 
@@ -38,20 +38,21 @@ app.get('/myposts', async function (req, res, next) {
 //this data is interacting with my Home and addPost conponents in the front end
 app.post("/myposts", async (req,res) => {
   const blogPost = {
-    title: req.body.title,
-    img: req.body.img,
-    body: req.body.body,
+    title: req.body.Title,
+    img: req.body.Img,
+    body: req.body.Body,
   };
-  console.log( blogPost);
+  console.log(blogPost);
+
   try {
-    const createBlogPost = await db.one (
-      "INSERT INTO myposts(title, img, body) VALUES($1, $2, $3) RETURNING *",
-      [blogPost.title, blogPost.img, blogPost.body]
+    const createBlogPost = await db.any(
+      'INSERT INTO myposts(title, img, body) VALUES($1, $2, $3) RETURNING *',
+      [blogPost.title, blogPost.img, blogPost.body],
     );
     console.log(createBlogPost);
     res.send(createBlogPost);
   } catch (e) {
-    return res.status(400).json( {e} )
+    return res.status(400).json({ e })
   }
 });
 
