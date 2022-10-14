@@ -26,9 +26,6 @@ const Navbar = ({setView}) => {
       <div className="navbar-btn" onClick={() => setView("favorite")}>
         <h2>Favorites</h2>
       </div>
-      <div className="navbar-btn" onClick={() => setView("addPost")}>
-        <h2>+ Add Post</h2>
-      </div>
     </div>
     </div>
   );

@@ -36,6 +36,8 @@ const addNewPost = async (newPost) => {
     })
     const data = await response.json ();
     console.log(data); //this is data from the new post
+    //call function to render what new data is being passed in, backend and front end are
+    //not working in sync. The second call OUTSIDE of useeffect will show user a seemless update
     getPost();
 };
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+//import { useState } from "react";
 
 const AddPost = ({addNewPost, setNewPost, newPost}) => {
   //const [post, setPost]  = useState ([]) 
