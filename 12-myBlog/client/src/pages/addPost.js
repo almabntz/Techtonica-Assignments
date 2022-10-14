@@ -1,14 +1,6 @@
 import React from "react";
-//import { useState } from "react";
 
 const AddPost = ({addNewPost, setNewPost, newPost}) => {
-  //const [post, setPost]  = useState ([]) 
-  // const [newPost, setNewPost] = useState({
-  //   Title: "",
-  //   Img: "",
-  //   Body: ""
-  // });/
-//------NEW CODE-------------
 
 // incoming data from the form
 // this data needs to be passed to my DB for storage

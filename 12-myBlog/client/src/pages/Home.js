@@ -2,9 +2,8 @@ import React, { useEffect, useState } from 'react';
 import AddPost from './AddPost';
 import BlogCard from './blogCard';
 
-const Home = (props) => {
-    const [createPost, setCreatePost] = useState([]);
-    //new code
+const Home = () => {
+    const [allPosts, setAllPosts] = useState([]);
     const [newPost, setNewPost] = useState({
         Title: "",
         Img: "",
@@ -17,11 +16,11 @@ const Home = (props) => {
 const getPost = async () => {
     const response = await fetch ('http://localhost:8080/myposts');
     const myBlogPosts = await response.json ();
-    setCreatePost(myBlogPosts)    
+    setAllPosts(myBlogPosts)    
 };
 useEffect(() => {
     getPost();
-}, [createPost]);
+}, [allPosts]);
 
 
 // This data is acting from the parent, "Home.js"
@@ -38,6 +37,7 @@ const addNewPost = async (newPost) => {
     console.log(data); //this is data from the new post
     //call function to render what new data is being passed in, backend and front end are
     //not working in sync. The second call OUTSIDE of useeffect will show user a seemless update
+    // VVVV
     getPost();
 };
 
@@ -49,9 +49,9 @@ return (
 	<div>
        
     <div> 
-    {createPost.map((myPosts, index) => {
+    {allPosts.map((myPosts, index) => {
           return (
-            <BlogCard
+            <BlogCard key={index}
                 myPosts2= {myPosts}
             />
           );
@@ -61,5 +61,5 @@ return (
 	</div>
 );
 };
-//prop key setnew post assigning setnewpost
+
 export default Home;
