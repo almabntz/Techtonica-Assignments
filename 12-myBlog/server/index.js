@@ -81,9 +81,5 @@ app.get('/aboutme', async function (req, res, next) {
   }
 });
 
-
-
-
-
   //should populate in console when server is launched
 app.listen(PORT, () => console.log(`Hola! Server is running on port ${PORT}`));

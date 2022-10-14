@@ -80,6 +80,12 @@ color: #a17e7e;
   padding: 15px;
 }
 
+.delete-user-id{
+  background-color: #a17e7e;
+  border: 1px solid #F7B6E5;
+  color:whitesmoke;
+  border-radius: 2px;
+}
 /*---------------------THIS IS ALL STYLING FOR MY ABOUT ME PAGE-----------------------------------------------*/
 .about-me{
 

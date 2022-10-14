@@ -1,5 +1,8 @@
 import './App.css';
 import { useState } from 'react';
+//new code for user log in
+//installed package npm install loginradius-react
+import { LRAuthProvider } from "loginradius-react";
 
 //navbar code
 import Navbar from './components/navBar';
