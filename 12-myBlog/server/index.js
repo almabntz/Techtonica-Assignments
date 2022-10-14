@@ -20,7 +20,7 @@ app.get('/', (request, response) => {
   response.json({ info: 'Hello! Node.js, Express, and Postgres API' })
 });
 
-
+//-------------------------------homepage functionality---------------------------------
 
 // GET from table myposts
 //this will be under http://localhost:8080/myposts
@@ -56,6 +56,20 @@ app.post("/myposts", async (req,res) => {
   }
 });
 
+//new code 
+//DELETE for posts
+app.delete("/myposts/:id", async (req,res) => {
+  const postId = req.params.id;
+  console.log(postId);
+  try {
+    await db.many("DELETE FROM myposts WHERE id=$1", [postId]);
+    res.send({ status: "success" });
+  } catch (e) {
+    return res.status(400).json({ e });
+  }
+});
+
+//-------------------------------about me functionality---------------------------------
 // GET for my aboutMe section
 app.get('/aboutme', async function (req, res, next) {
 

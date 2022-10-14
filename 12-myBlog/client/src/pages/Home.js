@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import AddPost from './AddPost';
 import BlogCard from './blogCard';
 
+
 const Home = () => {
     const [allPosts, setAllPosts] = useState([]);
     const [newPost, setNewPost] = useState({
@@ -24,7 +25,8 @@ useEffect(() => {
 
 
 // This data is acting from the parent, "Home.js"
-//my addPost page will be the child that will have the form for the data
+//my addPost page will be the child that will have
+// the form for the data
 //POST for post 
 const addNewPost = async (newPost) => {
     console.log(newPost)
@@ -35,25 +37,38 @@ const addNewPost = async (newPost) => {
     })
     const data = await response.json ();
     console.log(data); //this is data from the new post
-    //call function to render what new data is being passed in, backend and front end are
-    //not working in sync. The second call OUTSIDE of useeffect will show user a seemless update
+    //call function to render what new data is being passed in, 
+    //backend and front end are
+    //not working in sync. The second call OUTSIDE of useeffect 
+    //will show user a seemless update
     // VVVV
     getPost();
 };
 
+//const [allPosts, setAllPosts] = useState([]);
 
 //still need to create DELETE logic 
-
+const deleteBlog = (deleteId) => {
+return fetch(`http://localhost:8080/myposts/${deleteId}`, {
+    method: "DELETE"
+}).then((response) =>{
+    if(response.ok){
+        getPost();
+        }
+    })
+};
 
 return (
 	<div>
-       
+        
     <div> 
     {allPosts.map((myPosts, index) => {
           return (
-            <BlogCard key={index}
-                myPosts2= {myPosts}
-            />
+            <BlogCard 
+            key={index}
+            myPosts2= {myPosts} 
+            deleteBlog= {deleteBlog} />
+           
           );
         })}
     </div>
